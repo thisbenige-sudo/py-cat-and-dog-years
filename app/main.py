@@ -24,17 +24,14 @@ def get_human_age(cat_age: int, dog_age: int) -> list:
             raise TypeError("cat_age and dog_age must be integers")
         if age < 0:
             raise ValueError("cat_age and dog_age must be non-negative")
-        if age <= 15:
+        if age < 15:
             return 0
 
-        human_age = 1
-        age -= 15
+        if age < 24:
+            return 1
 
-        if age <= 9:
-            return human_age
-
-        human_age += 1
-        age -= 9
+        human_age = 2
+        age -= 24
 
         if age <= 0:
             return human_age
